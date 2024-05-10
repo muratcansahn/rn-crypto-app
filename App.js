@@ -1,23 +1,91 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
-import { NavigationContainer } from '@react-navigation/native';
-import { createStackNavigator } from '@react-navigation/stack';
-import React from 'react';
-import Home from './src/pages/Home';
+import * as React from "react";
+import { Text, View } from "react-native";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import Home from "./src/pages/Home";
+import { screenOptions } from "./utils";
+import { HomeIcon, Search, User, CreditCard, PieChart } from "./assets/icons";
+import { useIsFocused } from "@react-navigation/native";
 
-const Stack = createStackNavigator();
-
-export default function App() {
-  return (
-   <NavigationContainer>
-      <Stack.Navigator
-      initialRouteName='Home'
-      screenOptions={{
-        headerShown: false
-      }}
-      >
-        <Stack.Screen name="Home" component={Home} />
-      </Stack.Navigator>
-   </NavigationContainer>   );
+function StatisticsScreen() {
+    return (
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text>Statistics!</Text>
+        </View>
+    );
+}
+function ProfileScreen() {
+    return (
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text>Profile!</Text>
+        </View>
+    );
+}
+function SearchScreen() {
+    return (
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text>Search!</Text>
+        </View>
+    );
+}
+function PaymentsScreen() {
+    return (
+        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+            <Text>Payments!</Text>
+        </View>
+    );
 }
 
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+    return (
+        <NavigationContainer>
+            <Tab.Navigator
+                initialRouteName="Home"
+                screenOptions={screenOptions}
+                tabBarOptions={{
+                    activeTintColor: "#00BDB0",
+                    showLabel: false,
+                }}
+            >
+                <Tab.Screen
+                    name="Home"
+                    component={Home}
+                    options={{
+                        tabBarIcon: ({ focused }) => <HomeIcon color={focused ? "#00BDB0" : "#B3B4B8"} />,
+                    }}
+                />
+
+                <Tab.Screen
+                    name="Statistics"
+                    component={StatisticsScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => <PieChart color={focused ? "#00BDB0" : "#B3B4B8"} />,
+                    }}
+                />
+                <Tab.Screen
+                    name="Search"
+                    component={SearchScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => <Search color={focused ? "#00BDB0" : "#B3B4B8"} />,
+                    }}
+                />
+                <Tab.Screen
+                    name="Profile"
+                    component={ProfileScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => <User color={focused ? "#00BDB0" : "#B3B4B8"} />,
+                    }}
+                />
+                <Tab.Screen
+                    name="Payments"
+                    component={PaymentsScreen}
+                    options={{
+                        tabBarIcon: ({ focused }) => <CreditCard color={focused ? "#00BDB0" : "#B3B4B8"} />,
+                    }}
+                />
+            </Tab.Navigator>
+        </NavigationContainer>
+    );
+}
