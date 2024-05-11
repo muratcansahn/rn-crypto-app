@@ -5,9 +5,12 @@ import { LinearGradient } from "expo-linear-gradient";
 import * as coinData from "../../data.json";
 import { FlatList } from "react-native-web";
 import CoinCard from "../components/CoinCard/CoinCard";
-import { formatNumber } from "../utils";
+import { formatNumber } from "../../utils";
+import { ChevronUp, ChevronDown } from "../../assets/icons";
+import { theme } from "../theme";
 
 const Home = () => {
+    console.log(coinData);
     return (
         <View style={styles.container}>
             <View style={styles.headerBox}>
@@ -25,9 +28,36 @@ const Home = () => {
                         <Text style={styles.cardTitle}>Total Coins</Text>
                         <Text style={styles.cardValue}>${formatNumber(coinData.totalValue)}</Text>
                     </View>
-                    <View>
-                        <Text style={styles.cardTitle}>Today’s Profit</Text>
-                        <Text style={styles.cardValue}>${coinData.todayProfit}</Text>
+                    <View
+                        style={{
+                            display: "flex",
+                            flexDirection: "row",
+                            justifyContent: "space-between",
+                            alignItems: "center",
+                        }}
+                    >
+                        <View>
+                            <Text style={styles.cardTitle}>Today’s Profit</Text>
+                            <Text style={styles.cardValue}>${coinData.todayProfit}</Text>
+                        </View>
+                        <View
+                            style={{
+                                width: 90,
+                                height: 36,
+                                backgroundColor: theme.colors.trendBg,
+                                borderRadius: 20,
+                            }}
+                        >
+                            {" "}
+                            <View style={styles.coinChange}>
+                                {coinData.profitPercentage < 0 ? <ChevronDown color={theme.colors.error} /> : <ChevronUp color={theme.colors.success} />}
+                                <Text
+                                    style={[styles.coinChangePercentage, { color: coinData.profitPercentage < 0 ? theme.colors.error : theme.colors.success }]}
+                                >
+                                    {coinData.profitPercentage}%
+                                </Text>
+                            </View>
+                        </View>
                     </View>
                 </LinearGradient>
             </View>

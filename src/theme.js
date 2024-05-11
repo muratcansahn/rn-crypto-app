@@ -8,5 +8,6 @@ export const theme = {
         passiveTintColor: "#B3B4B8",
         success: "#00BFB2",
         error: "#FF3B30",
+        trendBg: "#D6F5F3",
     },
 };

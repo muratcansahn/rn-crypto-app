@@ -72,4 +72,15 @@ export const styles = StyleSheet.create({
         textAlign: "center",
         fontWeight: "bold",
     },
+    coinChange: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        height: "100%",
+    },
+    coinChangePercentage: {
+        marginLeft: "8px",
+        fontSize: 16,
+        lineHeight: 28,
+    },
 });
