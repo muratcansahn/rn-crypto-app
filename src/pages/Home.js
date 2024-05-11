@@ -1,10 +1,11 @@
-import { StyleSheet, Text, View,Image } from 'react-native'
-import React from 'react'
-import { styles } from './HomeStyles'
-import { LinearGradient } from 'expo-linear-gradient';
-import * as coinData from '../../data.json'
-import { FlatList } from 'react-native-web';
-import CoinCard from '../components/CoinCard/CoinCard';
+import { Text, View } from "react-native";
+import React from "react";
+import { styles } from "./HomeStyles";
+import { LinearGradient } from "expo-linear-gradient";
+import * as coinData from "../../data.json";
+import { FlatList } from "react-native-web";
+import CoinCard from "../components/CoinCard/CoinCard";
+import { formatNumber } from "../utils";
 
 const Home = () => {
     return (
@@ -22,22 +23,17 @@ const Home = () => {
                 >
                     <View>
                         <Text style={styles.cardTitle}>Total Coins</Text>
-                        <Text style={styles.cardValue}>$7,273,291</Text>
+                        <Text style={styles.cardValue}>${formatNumber(coinData.totalValue)}</Text>
                     </View>
                     <View>
                         <Text style={styles.cardTitle}>Today’s Profit</Text>
-                        <Text style={styles.cardValue}>$193,28</Text>
+                        <Text style={styles.cardValue}>${coinData.todayProfit}</Text>
                     </View>
                 </LinearGradient>
             </View>
             <View style={styles.coinsSection}>
                 <Text style={styles.coinsSectionTitle}>My Coins</Text>
-                <View
-                    style={{
-                        display: "flex",
-                        marginTop: 8,
-                    }}
-                >
+                <View style={styles.coinsSectionWrapper}>
                     <FlatList
                         style={{
                             width: "100%",
@@ -63,10 +59,4 @@ const Home = () => {
     );
 };
 
-
-
-export default Home
-
-
-
-
+export default Home;

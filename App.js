@@ -5,8 +5,8 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "./src/pages/Home";
 import { screenOptions } from "./utils";
 import { HomeIcon, Search, User, CreditCard, PieChart } from "./assets/icons";
-import { useIsFocused } from "@react-navigation/native";
 import { StyleSheet } from "react-native";
+import { theme } from "./src/theme";
 
 function StatisticsScreen() {
     return (
@@ -46,7 +46,7 @@ export default function App() {
                 initialRouteName="Home"
                 screenOptions={screenOptions}
                 tabBarOptions={{
-                    activeTintColor: "#00BDB0",
+                    activeTintColor: theme.colors.activeTintColor,
                     showLabel: false,
                 }}
             >
@@ -56,7 +56,7 @@ export default function App() {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <>
-                                <HomeIcon color={focused ? "#00BDB0" : "#B3B4B8"} />
+                                <HomeIcon color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                 {focused && <View style={styles.activeTabIndicator} />}
                             </>
                         ),
@@ -69,7 +69,7 @@ export default function App() {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <>
-                                <PieChart color={focused ? "#00BDB0" : "#B3B4B8"} />
+                                <PieChart color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                 {focused && <View style={styles.activeTabIndicator} />}
                             </>
                         ),
@@ -81,7 +81,7 @@ export default function App() {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <>
-                                <Search color={focused ? "#00BDB0" : "#B3B4B8"} />
+                                <Search color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                 {focused && <View style={styles.activeTabIndicator} />}
                             </>
                         ),
@@ -93,7 +93,7 @@ export default function App() {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <>
-                                <CreditCard color={focused ? "#00BDB0" : "#B3B4B8"} />
+                                <CreditCard color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                 {focused && <View style={styles.activeTabIndicator} />}
                             </>
                         ),
@@ -105,7 +105,7 @@ export default function App() {
                     options={{
                         tabBarIcon: ({ focused }) => (
                             <>
-                                <User color={focused ? "#00BDB0" : "#B3B4B8"} />
+                                <User color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                 {focused && <View style={styles.activeTabIndicator} />}
                             </>
                         ),
@@ -121,7 +121,7 @@ const styles = StyleSheet.create({
         width: "75%",
         height: 6,
         borderRadius: 3,
-        backgroundColor: "#00BDB0",
+        backgroundColor: theme.colors.activeTintColor,
         position: "absolute",
         bottom: "8px",
         alignSelf: "center",

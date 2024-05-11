@@ -1,10 +1,11 @@
 // styles.js
 
 import { StyleSheet } from 'react-native';
+import { theme } from "../theme";
 
 export const styles = StyleSheet.create({
     container: {
-        backgroundColor: "#F8F8F8",
+        backgroundColor: theme.colors.primary,
         height: "100%",
     },
     headerBox: {
@@ -16,7 +17,7 @@ export const styles = StyleSheet.create({
         fontSize: 24,
         fontWeight: "600",
         marginTop: 48,
-        backgroundColor: "#F8F8F8",
+        backgroundColor: theme.colors.primary,
         width: "228px",
         textAlign: "center",
     },
@@ -32,7 +33,7 @@ export const styles = StyleSheet.create({
     cardTitle: {
         fontSize: 16,
         fontWeight: "600",
-        color: "#D6D7D8",
+        color: theme.colors.gray,
     },
     mainCardWrapper: {
         width: "100%",
@@ -52,6 +53,10 @@ export const styles = StyleSheet.create({
     coinsSection: {
         margin: "18px",
         display: "flex",
+    },
+    coinsSectionWrapper: {
+        display: "flex",
+        marginTop: 8,
     },
     coinsSectionTitle: {
         fontWeight: "500",

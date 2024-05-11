@@ -2,6 +2,7 @@ import { StyleSheet, Text, View, Image } from "react-native";
 import React from "react";
 import { styles } from "./CoinCardStyles";
 import { ChevronUp, ChevronDown } from "../../../assets/icons";
+import { theme } from "../../theme";
 
 const CoinCard = ({ coin }) => {
     return (
@@ -16,8 +17,10 @@ const CoinCard = ({ coin }) => {
             <View style={styles.coinCardBottom}>
                 <Text style={styles.coinValue}>${coin.value}</Text>
                 <View style={styles.coinChange}>
-                    {coin.changePercentage < 0 ? <ChevronDown color={"#F15950"} /> : <ChevronUp color={"#10DC78"} />}
-                    <Text style={[styles.coinChangePercentage, { color: coin.changePercentage < 0 ? "#F15950" : "#10DC78" }]}>{coin.changePercentage}%</Text>
+                    {coin.changePercentage < 0 ? <ChevronDown color={theme.colors.error} /> : <ChevronUp color={theme.colors.success} />}
+                    <Text style={[styles.coinChangePercentage, { color: coin.changePercentage < 0 ? theme.colors.error : theme.colors.success }]}>
+                        {coin.changePercentage}%
+                    </Text>
                 </View>
             </View>
         </View>

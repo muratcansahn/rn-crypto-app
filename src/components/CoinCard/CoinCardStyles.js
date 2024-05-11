@@ -1,10 +1,11 @@
 import { StyleSheet } from 'react-native';
+import { theme } from "../../theme";
 
 export const styles = StyleSheet.create({
     coinCard: {
         width: "168px",
         height: "114px",
-        backgroundColor: "#FFFFFF",
+        backgroundColor: "white",
         padding: "8px",
         borderRadius: "12px",
         justifyContent: "space-between",
@@ -22,10 +23,10 @@ export const styles = StyleSheet.create({
     coinNameAbb: {
         fontSize: 16,
         fontWeight: "600",
-        color: "#141B29",
+        color: theme.colors.black,
     },
     coinName: {
-        color: "#70747C",
+        color: theme.colors.graySecondary,
         marginTop: "4px",
     },
     coinCardName: {
@@ -35,11 +36,12 @@ export const styles = StyleSheet.create({
         flexDirection: "row",
         paddingBottom: "8px",
         justifyContent: "space-between",
+        alignItems: "center",
     },
     coinValue: {
         fontSize: 16,
         fontWeight: "600",
-        color: "#141B29",
+        color: theme.colors.black,
     },
     coinChange: {
         flexDirection: "row",

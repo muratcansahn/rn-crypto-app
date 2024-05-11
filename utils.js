@@ -12,3 +12,19 @@ export const screenOptions = {
         borderTopColor: "transparent",
     },
 };
+export const formatNumber = (number) => {
+    // Convert the number to a string to manipulate it
+    let numberStr = number.toString();
+    let newNumber = "";
+
+    // Add a dot every three digits from the end
+    for (let i = numberStr.length - 1; i >= 0; i--) {
+        newNumber = numberStr[i] + newNumber;
+        if ((numberStr.length - i) % 3 === 0 && i !== 0) {
+            newNumber = "." + newNumber;
+        }
+    }
+
+    return newNumber;
+};
+
