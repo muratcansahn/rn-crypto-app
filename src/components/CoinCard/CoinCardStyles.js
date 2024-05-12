@@ -3,7 +3,7 @@ import { theme } from "../../theme";
 
 export const styles = StyleSheet.create({
     coinCard: {
-        width: "168px",
+        width: "47%",
         height: "114px",
         backgroundColor: "white",
         padding: "8px",
@@ -34,7 +34,6 @@ export const styles = StyleSheet.create({
     },
     coinCardBottom: {
         flexDirection: "row",
-        paddingBottom: "8px",
         justifyContent: "space-between",
         alignItems: "center",
     },
