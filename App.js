@@ -35,18 +35,6 @@ export default function App() {
                         }}
                     />
                 ))}
-                {/* <Tab.Screen
-                    name="Search"
-                    component={SearchScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <>
-                                <Search color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
-                                {focused && <View style={styles.activeTabIndicator} />}
-                            </>
-                        ),
-                    }}
-                /> */}
             </Tab.Navigator>
         </NavigationContainer>
     );
@@ -55,7 +43,7 @@ export default function App() {
 const styles = StyleSheet.create({
     activeTabIndicator: {
         width: "75%",
-        height: 6,
+        height: 4,
         borderRadius: 3,
         backgroundColor: theme.colors.activeTintColor,
         position: "absolute",

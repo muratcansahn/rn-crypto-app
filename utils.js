@@ -10,6 +10,10 @@ export const screenOptions = {
         borderRadius: 100,
         height: 68,
         borderTopColor: "transparent",
+        paddingLeft: 20,
+        paddingRight: 20,
+        justifyContent: "center",
+        paddingBottom: 10,
     },
 };
 export const formatNumber = (number) => {

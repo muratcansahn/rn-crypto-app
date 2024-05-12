@@ -47,7 +47,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     viewMore: {
-        marginTop: "20px",
+        marginTop: "28px",
         textAlign: "center",
         fontWeight: "bold",
     },
