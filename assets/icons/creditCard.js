@@ -1,15 +1,18 @@
+import React from "react";
+import Svg, { Path } from "react-native-svg";
+
 const CreditCard = ({ color }) => (
-    <svg width="25" height="24" viewBox="0 0 25 24" fill={color} xmlns="http://www.w3.org/2000/svg">
-        <path
+    <Svg width="25" height="24" viewBox="0 0 25 24" fill={color} xmlns="http://www.w3.org/2000/svg">
+        <Path
             d="M4.89997 4.79999C3.57449 4.79999 2.49997 5.8745 2.49997 7.19999V8.39999H21.7V7.19999C21.7 5.8745 20.6255 4.79999 19.3 4.79999H4.89997Z"
             fill={color}
         />
-        <path
+        <Path
             fillRule="evenodd"
             clipRule="evenodd"
             d="M21.7 10.8H2.49997V16.8C2.49997 18.1255 3.57449 19.2 4.89997 19.2H19.3C20.6255 19.2 21.7 18.1255 21.7 16.8V10.8ZM4.89997 15.6C4.89997 14.9372 5.43723 14.4 6.09997 14.4H7.29997C7.96271 14.4 8.49997 14.9372 8.49997 15.6C8.49997 16.2627 7.96271 16.8 7.29997 16.8H6.09997C5.43723 16.8 4.89997 16.2627 4.89997 15.6ZM10.9 14.4C10.2372 14.4 9.69997 14.9372 9.69997 15.6C9.69997 16.2627 10.2372 16.8 10.9 16.8H12.1C12.7627 16.8 13.3 16.2627 13.3 15.6C13.3 14.9372 12.7627 14.4 12.1 14.4H10.9Z"
             fill={color}
         />
-    </svg>
+    </Svg>
 );
 export default CreditCard;

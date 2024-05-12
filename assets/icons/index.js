@@ -1,8 +1,8 @@
-import ChevronDown from "./chevronDown";
-import ChevronUp from "./chevronUp";
-import HomeIcon from "./homeIcon";
-import CreditCard from "./creditCard";
-import PieChart from "./pieChart";
-import SearchIcon from "./searchIcon";
-import User from "./user";
+import ChevronDown from "./ChevronDown";
+import ChevronUp from "./ChevronUp";
+import HomeIcon from "./HomeIcon";
+import CreditCard from "./CreditCard";
+import PieChart from "./PieChart";
+import SearchIcon from "./SearchIcon";
+import User from "./User";
 export { ChevronDown, ChevronUp, HomeIcon, CreditCard, PieChart, SearchIcon, User };

@@ -28,7 +28,7 @@ export default function App() {
                         options={{
                             tabBarIcon: ({ focused }) => (
                                 <>
-                                    <tab.icon width={24} height={24} color={focused ? theme.colors.activeTintColor : theme.colors.inactiveTintColor} />
+                                    <tab.icon width={24} height={24} color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
                                     {focused && <View style={styles.activeTabIndicator} />}
                                 </>
                             ),

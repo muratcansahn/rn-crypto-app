@@ -2,7 +2,7 @@ import { Text, View } from "react-native";
 import React from "react";
 import { styles } from "./HomeStyles";
 import * as coinData from "../../../data.json";
-import { FlatList } from "react-native-web";
+import { FlatList } from "react-native";
 import CoinCard from "../../components/CoinCard/CoinCard";
 import { MainCard } from "../../components/MainCard/MainCard";
 

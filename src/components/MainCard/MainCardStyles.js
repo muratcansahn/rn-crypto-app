@@ -12,7 +12,7 @@ export const styles = StyleSheet.create({
     },
     cardTitle: {
         fontSize: 16,
-        fontWeight: "600",
+        fontWeight: 500,
         color: theme.colors.gray,
     },
     cardValue: {

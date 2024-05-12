@@ -18,10 +18,19 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.muratcansahn.cryptoapp"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "ef72ad9b-a914-4120-ab87-eba9de20bd7c"
+      }
+    },
+    "plugins": [
+      "expo-asset"
+    ]
   }
 }

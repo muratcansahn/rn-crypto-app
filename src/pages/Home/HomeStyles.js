@@ -40,6 +40,7 @@ export const styles = StyleSheet.create({
     coinsSectionTitle: {
         fontWeight: "500",
         fontSize: 16,
+        marginTop: 16,
     },
     coinCardWrapper: {
         display: "flex",
@@ -47,7 +48,7 @@ export const styles = StyleSheet.create({
         flexDirection: "column",
     },
     viewMore: {
-        marginTop: "28px",
+        marginTop: "24px",
         textAlign: "center",
         fontWeight: "bold",
     },

@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         height: "114px",
         backgroundColor: "white",
         padding: "8px",
-        borderRadius: "12px",
+        borderRadius: 12,
         justifyContent: "space-between",
     },
     coinCardHeader: {
@@ -18,7 +18,7 @@ export const styles = StyleSheet.create({
     coinIcon: {
         width: "40px",
         height: "40px",
-        borderRadius: "50%",
+        borderRadius: 50,
     },
     coinNameAbb: {
         fontSize: 16,

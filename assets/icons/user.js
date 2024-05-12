@@ -1,10 +1,13 @@
+import React from "react";
+import Svg, { Path } from "react-native-svg";
 const User = ({ color }) => (
-    <svg width="25" height="24" viewBox="0 0 25 24" fill={color} xmlns="http://www.w3.org/2000/svg">
-        <path
-            d="M12.7 10.8C14.6882 10.8 16.3 9.18823 16.3 7.20001C16.3 5.21178 14.6882 3.60001 12.7 3.60001C10.7118 3.60001 9.09999 5.21178 9.09999 7.20001C9.09999 9.18823 10.7118 10.8 12.7 10.8Z"
+    <Svg width={24} height={24} viewBox="0 0 24 24">
+        <Path
             fill={color}
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M12 12C14.21 12 16 10.21 16 8C16 5.79 14.21 4 12 4C9.79 4 8 5.79 8 8C8 10.21 9.79 12 12 12ZM12 14C9.33 14 4 15.34 4 18V20H20V18C20 15.34 14.67 14 12 14Z"
         />
-        <path d="M4.29999 21.6C4.29999 16.9608 8.0608 13.2 12.7 13.2C17.3392 13.2 21.1 16.9608 21.1 21.6H4.29999Z" fill={color} />
-    </svg>
+    </Svg>
 );
 export default User;
