@@ -1,5 +1,5 @@
 const User = ({ color }) => (
-    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg width="25" height="24" viewBox="0 0 25 24" fill={color} xmlns="http://www.w3.org/2000/svg">
         <path
             d="M12.7 10.8C14.6882 10.8 16.3 9.18823 16.3 7.20001C16.3 5.21178 14.6882 3.60001 12.7 3.60001C10.7118 3.60001 9.09999 5.21178 9.09999 7.20001C9.09999 9.18823 10.7118 10.8 12.7 10.8Z"
             fill={color}

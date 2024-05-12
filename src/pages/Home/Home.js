@@ -2,12 +2,12 @@ import { Text, View } from "react-native";
 import React from "react";
 import { styles } from "./HomeStyles";
 import { LinearGradient } from "expo-linear-gradient";
-import * as coinData from "../../data.json";
+import * as coinData from "../../../data.json";
 import { FlatList } from "react-native-web";
-import CoinCard from "../components/CoinCard/CoinCard";
-import { formatNumber } from "../../utils";
-import { ChevronUp, ChevronDown } from "../../assets/icons";
-import { theme } from "../theme";
+import CoinCard from "../../components/CoinCard/CoinCard";
+import { formatNumber } from "../../../utils";
+import { ChevronUp, ChevronDown } from "../../../assets/icons";
+import { theme } from "../../theme";
 
 const Home = () => {
     console.log(coinData);
@@ -48,13 +48,12 @@ const Home = () => {
                                 borderRadius: 20,
                             }}
                         >
-                            {" "}
                             <View style={styles.coinChange}>
                                 {coinData.profitPercentage < 0 ? <ChevronDown color={theme.colors.error} /> : <ChevronUp color={theme.colors.success} />}
                                 <Text
                                     style={[styles.coinChangePercentage, { color: coinData.profitPercentage < 0 ? theme.colors.error : theme.colors.success }]}
                                 >
-                                    {coinData.profitPercentage}%
+                                    {coinData.profitPercentage.toString()}%
                                 </Text>
                             </View>
                         </View>
@@ -80,7 +79,7 @@ const Home = () => {
                         renderItem={({ item }) => {
                             return <CoinCard coin={item} />;
                         }}
-                        keyExtractor={(item) => item.id}
+                        keyExtractor={(item) => item.abbreviation}
                     />
                 </View>
                 <Text style={styles.viewMore}>View More</Text>

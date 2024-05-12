@@ -2,40 +2,10 @@ import * as React from "react";
 import { Text, View } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
-import Home from "./src/pages/Home";
 import { screenOptions } from "./utils";
-import { HomeIcon, Search, User, CreditCard, PieChart } from "./assets/icons";
 import { StyleSheet } from "react-native";
 import { theme } from "./src/theme";
-
-function StatisticsScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Statistics!</Text>
-        </View>
-    );
-}
-function ProfileScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Profile!</Text>
-        </View>
-    );
-}
-function SearchScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Search!</Text>
-        </View>
-    );
-}
-function PaymentsScreen() {
-    return (
-        <View style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-            <Text>Payments!</Text>
-        </View>
-    );
-}
+import { tabs } from "./src/tabs";
 
 const Tab = createBottomTabNavigator();
 
@@ -50,32 +20,22 @@ export default function App() {
                     showLabel: false,
                 }}
             >
-                <Tab.Screen
-                    name="Home"
-                    component={Home}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <>
-                                <HomeIcon color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
-                                {focused && <View style={styles.activeTabIndicator} />}
-                            </>
-                        ),
-                    }}
-                />
-
-                <Tab.Screen
-                    name="Statistics"
-                    component={StatisticsScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <>
-                                <PieChart color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
-                                {focused && <View style={styles.activeTabIndicator} />}
-                            </>
-                        ),
-                    }}
-                />
-                <Tab.Screen
+                {tabs.map((tab, index) => (
+                    <Tab.Screen
+                        key={index}
+                        name={tab.name}
+                        component={tab.component}
+                        options={{
+                            tabBarIcon: ({ focused }) => (
+                                <>
+                                    <tab.icon width={24} height={24} color={focused ? theme.colors.activeTintColor : theme.colors.inactiveTintColor} />
+                                    {focused && <View style={styles.activeTabIndicator} />}
+                                </>
+                            ),
+                        }}
+                    />
+                ))}
+                {/* <Tab.Screen
                     name="Search"
                     component={SearchScreen}
                     options={{
@@ -86,31 +46,7 @@ export default function App() {
                             </>
                         ),
                     }}
-                />
-                <Tab.Screen
-                    name="Payments"
-                    component={PaymentsScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <>
-                                <CreditCard color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
-                                {focused && <View style={styles.activeTabIndicator} />}
-                            </>
-                        ),
-                    }}
-                />
-                <Tab.Screen
-                    name="Profile"
-                    component={ProfileScreen}
-                    options={{
-                        tabBarIcon: ({ focused }) => (
-                            <>
-                                <User color={focused ? theme.colors.activeTintColor : theme.colors.passiveTintColor} />
-                                {focused && <View style={styles.activeTabIndicator} />}
-                            </>
-                        ),
-                    }}
-                />
+                /> */}
             </Tab.Navigator>
         </NavigationContainer>
     );
